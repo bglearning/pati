@@ -14,7 +14,14 @@
           <div class="col-lg-12 mb-4">
               <div class="col-md-6 mx-auto">
                 <div class="row">
-                    <canvas id="sketchpad" width="200" height="200" style="background-color:lightblue"></canvas>
+                    <div class="col-md-6">
+                        <canvas id="sketchpad" width="200" height="200" style="background-color:lightblue"></canvas>
+                    </div>
+                    <div class="col-md-6">
+                       {% if prediction != ''%}
+                       <h5><i>I see:</i> </h5><h2>{{ prediction }}</h2>
+                       {% endif %}
+                    </div>
                 </div>
                 <div class="row">
                     <input type="submit" value="Clear Sketchpad" onclick="clearCanvas(canvas,ctx);">
@@ -24,13 +31,6 @@
                     </form>
                 </div>
               </div>
-          </div>
-        </div>
-        <div class="row" style='text-align: center'>
-          <div class="col-lg-12 text-center">
-            {% if prediction != ''%}
-            <h5><i>I see:</i> </h5><h2>{{ prediction }}</h2>
-            {% endif %}
           </div>
         </div>
     </div>
